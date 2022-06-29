@@ -1,4 +1,4 @@
-/* .App {
+.App {
   text-align: center;
 }
 
@@ -35,9 +35,9 @@
   to {
     transform: rotate(360deg);
   }
-} */
+}
 /* ------------------------------------------------------------ */
-* {
+/* * {
   margin: 0;
   padding: 0;
 }
@@ -77,4 +77,4 @@ article {
 
 .id {
   padding: 1px;
-}
+} */
