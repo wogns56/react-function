@@ -286,7 +286,7 @@ class App extends Component{
                       let _contents = Array.from(this.state.contents);
                       let i = 0;
                       while(i < _contents.length) {
-                        if(_contents[i].id == _id) {
+                        if(_contents[i].id === _id) {
                           _contents[i] = {id:_id,title:_title,desc:_desc};
                           break;
                         }
