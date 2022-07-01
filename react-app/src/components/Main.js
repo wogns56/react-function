@@ -9,7 +9,7 @@ class Main extends Component {
         while(i < data.length) {
             lists.push(<li key={data[i].id}>
                         <a href={"/content/" + data[i].id}
-                        data-id = {data[i].id}
+                            data-id = {data[i].id}
                             onClick = {function(e){
                             e.preventDefault();
                             this.props.onChangePage(e.target.dataset.id);
@@ -18,17 +18,23 @@ class Main extends Component {
                     i = i + 1;
         }
         return(
-            <article>
-                <br></br>
-                <section class="content">
-                        asdf
-                </section>
-                <aside class="right-side">
-                    <input type="text" class="id" size="10"></input>
-                </aside>
+            // <article>
+            //     <br></br>
+            //     <section class="content">
+            //             asdf
+            //     </section>
+            //     <aside class="right-side">
+            //         <input type="text" class="id" size="10"></input>
+            //     </aside>
 
-                {lists}
-            </article>
+            //     {lists}
+            // </article>
+            <nav>
+                <h2>가입한 회원</h2>
+                <ul>
+                    {lists}
+                </ul>
+            </nav>
         );
     }
 }

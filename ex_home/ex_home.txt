@@ -1,0 +1,52 @@
+// import './App.css';
+// import React,{ Component } from 'react';
+// import Title from './components/Title';
+// import Search from './components/Search';
+// import Main from './components/Main';
+// import Content from './components/Content';
+
+// class App extends Component {
+//   constructor(props) {
+//     super(props);
+//     this.state = {
+//       mode:'read',
+//       selected_content_id:1,
+//       contents:[
+//         {id:1, title:'여기 아무것도 없어요'},
+//         {id:2, title:'아무것도 없다니까요. 나가요'}
+//       ]
+//     }
+//   }
+//     render(){
+//       let _title;
+//       if(this.state.mode === 'read') {
+//         let i = 0;
+//         while(i < this.state.contents.length) {
+//           let data = this.state.contents[i];
+//           if(data.id === this.state.selected_content_id) {
+//             _title = data.title;
+
+//             break;
+//           }
+//           i = i + 1;
+//         }
+//       }
+//       return(
+//         <div>
+//           <Title></Title>
+//           <Search></Search>
+//           <Main data={this.state.contents}
+//                       onChangePage={function(id){
+//                         this.setState({
+//                           mode:'read',
+//                           selected_content_id:Number(id)
+//                         });
+//                       }.bind(this)}>
+//           </Main>
+//           <Content title={_title}></Content>
+//         </div>
+//       );
+//     }
+// }
+
+// export default App;

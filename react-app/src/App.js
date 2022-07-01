@@ -151,60 +151,6 @@
 // // }
 
 // export default App;
-// ----------------------------------------------------------
-
-// import './App.css';
-// import React,{ Component } from 'react';
-// import Title from './components/Title';
-// import Search from './components/Search';
-// import Main from './components/Main';
-// import Content from './components/Content';
-
-// class App extends Component {
-//   constructor(props) {
-//     super(props);
-//     this.state = {
-//       mode:'read',
-//       selected_content_id:1,
-//       contents:[
-//         {id:1, title:'여기 아무것도 없어요'},
-//         {id:2, title:'아무것도 없다니까요. 나가요'}
-//       ]
-//     }
-//   }
-//     render(){
-//       let _title;
-//       if(this.state.mode === 'read') {
-//         let i = 0;
-//         while(i < this.state.contents.length) {
-//           let data = this.state.contents[i];
-//           if(data.id === this.state.selected_content_id) {
-//             _title = data.title;
-
-//             break;
-//           }
-//           i = i + 1;
-//         }
-//       }
-//       return(
-//         <div>
-//           <Title></Title>
-//           <Search></Search>
-//           <Main data={this.state.contents}
-//                       onChangePage={function(id){
-//                         this.setState({
-//                           mode:'read',
-//                           selected_content_id:Number(id)
-//                         });
-//                       }.bind(this)}>
-//           </Main>
-//           <Content title={_title}></Content>
-//         </div>
-//       );
-//     }
-// }
-
-// export default App;
 // ------------------------------------------------------------
 import './App.css';
 import React,{ Component } from 'react';
@@ -360,3 +306,89 @@ class App extends Component{
 }
 
 export default App;
+// --------------------------------------------------------
+// import './App.css';
+// import React,{ Component } from 'react';
+// import Title from './components/Title';
+// import Signin from './components/Signin';
+// import Main from './components/Main';
+// import CreateInfo from './components/CreateInfo';
+
+// class App extends Component {
+//   constructor(props) {
+//     super(props);
+//     this.max_content_id = 3;
+//     this.state = {
+//       mode:'read',
+//       selected_content_id:2,
+//       contents:[
+//         {id:1,title:'Hong',desc:'asdf',address:'seoul',Id:'asdf',pw:'asdf'},
+//         {id:2,title:'Gil',desc:'qwer',address:'busan',Id:'qwer',pw:'qwer'},
+//         {id:3,title:'Dong',desc:'zxcv',address:'incheon',Id:'zxcv',pw:'zxcv'}
+//       ]
+//     }
+//   }
+
+//   getSignin(){
+//     let i = 0;
+//       while(i < this.state.contents.length) {
+//         let data = this.state.contents[i];
+//         if(data.id === this.state.selected_content_id) {
+//           return data;
+//         }
+//         i = i + 1;
+//       }
+//   }
+
+//   getContent(){
+//     let _title, _desc, _address, _Id, _pw = null, _article;
+
+//     if(this.state.mode === 'read'){
+//       let _content = this.getSignin();
+//           _article = <Signin title={_content.title}
+//                               desc={_content.desc}
+//                               address={_content.address}
+//                               Id={_content.Id}
+//                               pw={_content.pw}></Signin>;
+//       }else if(this.state.mode === 'create'){
+//           _article = <CreateInfo onSubmit={function(_title,_desc,_address,_Id,_pw){
+//           this.max_content_id = this.max_content_id + 1;
+
+//           let _contents = Array.from(this.state.contents);
+//           _contents.push({id:this.max_content_id,title:_title,desc:_desc,address:_address,Id:_Id,pw:_pw});
+
+//         this.setState({
+//           mode:'read',
+//           contents : _contents,
+//           selected_content_id:this.max_content_id
+//         })
+//       }.bind(this)}></CreateInfo>
+//     }
+
+//     return _article;
+//   }
+
+//   render(){
+//     console.log('App render');
+//     return(
+//       <div>
+//         <Title></Title>
+//         <Main data={this.state.contents}
+//           onChangePage={function(id){
+//             this.setState(
+//               {
+//                 mode:'read',
+//                 selected_content_id:Number(id)
+//               }
+//             ) ;
+//           }.bind(this)}></Main>
+
+//           {this.getContent()}
+
+//         <CreateInfo></CreateInfo>
+//       </div>
+//     );
+//   }
+// }
+
+// export default App;
